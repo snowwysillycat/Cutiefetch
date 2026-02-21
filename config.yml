@@ -1,115 +1,16 @@
-# Winfetch Configuration
-
-# Logo Settings
-logo:
-  # Available logos:
-  # - windows_10 (Windows 10 style)
-  # - windows_11 (Windows 11 style)
-  # - windows_simple (Simple Windows logo)
-  # - linux_tux (Linux penguin)
-  # - macos (Apple logo)
-  # - python (Python snake)
-  pick: "windows_11"
-
-# Display Settings
-display:
-  show_logo: true
-  logo_side: left
-  space_between: 2
-  max_width: 80
-  text_align: left
-
-# Information Display
-show_info:
-  - name: OS
-    label: "OS"
-    show: true
-    color: "green"
-  - name: Uptime
-    label: "Uptime"
-    show: true
-    color: "yellow"
-  - name: Local IP
-    label: "IP"
-    show: true
-    color: "blue"
-  - name: Motherboard
-    label: "Motherboard"
-    show: true
-    color: "magenta"
-  - name: CPU
-    label: "CPU"
-    show: true
-    color: "cyan"
-  - name: GPU
-    label: "GPU"
-    show: true
-    color: "red"
-  - name: Memory
-    label: "Memory"
-    show: true
-    color: "green"
-  - name: Disk Usage
-    label: "Disk"
-    show: true
-    color: "yellow"
-
-# Custom Labels
-labels:
-  OS: "OS"
-  Uptime: "Uptime"
-  Local IP: "IP"
-  Motherboard: "Motherboard"
-  CPU: "CPU"
-  GPU: "GPU"
-  Memory: "Memory"
-  Disk Usage: "Disk"
-
-# Format Settings
-format:
-  memory: "{available:.1f}GiB / {total:.1f}GiB ({percent:.1f}%)"
-  disk: "{device} {used:.1f}GiB / {total:.1f}GiB ({percent:.1f}%)"
-  uptime: "{days}d {hours}h {minutes}m"
-
-# Available Colors
+# Cutiefetch Configuration
+logo: "hot_cat"
 colors:
-  - "black"
-  - "red"
-  - "green"
-  - "yellow"
-  - "blue"
-  - "magenta"
-  - "cyan"
-  - "white"
-  - "bright_black"
-  - "bright_red"
-  - "bright_green"
-  - "bright_yellow"
-  - "bright_blue"
-  - "bright_magenta"
-  - "bright_cyan"
-  - "bright_white"
-
-# ─── Adding Custom ASCII Logos ──────────
-# Wanna add your own banner? Here's how:
-#
-# 1. Try an online generator:
-#    - https://ascii-art-generator.org/
-#    - https://www.ascii-art-generator.org/
-#    - https://www.text-image.com/convert/
-#
-# 2. Suggested dimensions:
-#    - Width: 40–50 characters
-#    - Height: around 8 lines is comfy
-#    - Use monospaced font or it'll look awful
-#
-# 3. Add to ASCII.py (find ASCII_ART dict), like:
-#    "rad_logo": [
-#        "  ▄▄▄▄   ",
-#        " ▀▀██▀▀  ",
-#        "   ██    ",
-#        "  ▄██▄   "
-#    ]
-#
-# 4. Then set:
-#    pick: "rad_logo"
+  primary_label: "&p"
+  primary_info: "&w"
+modules:
+  - { id: "os", label: "OS", enabled: true }
+  - { id: "host", label: "Host", enabled: true }
+  - { id: "kernel", label: "Kernel", enabled: true }
+  - { id: "uptime", label: "Uptime", enabled: true }
+  - { id: "pkgs", label: "Packages", enabled: true }
+  - { id: "shell", label: "Shell", enabled: true }
+  - { id: "cpu", label: "CPU", enabled: true }
+  - { id: "gpu", label: "GPU", enabled: true }
+  - { id: "mem", label: "Memory", enabled: true }
+  - { id: "batt", label: "Power", enabled: true }
